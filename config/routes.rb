@@ -1,4 +1,7 @@
 Ulinks::Application.routes.draw do
+
+  resources :forum_links
+  resources :watsup_links
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
