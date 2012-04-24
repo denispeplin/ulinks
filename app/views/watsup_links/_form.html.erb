@@ -1,0 +1,25 @@
+<%= form_for(@watsup_link) do |f| %>
+  <% if @watsup_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@watsup_link.errors.count, "error") %> prohibited this watsup_link from being saved:</h2>
+
+      <ul>
+      <% @watsup_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

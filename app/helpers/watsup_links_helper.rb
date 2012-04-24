@@ -1,0 +1,2 @@
+module WatsupLinksHelper
+end
