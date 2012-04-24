@@ -1,0 +1,3 @@
+Ulinks::Application.config.forum[:ip] = "123.123.123.123"
+Ulinks::Application.config.forum[:password] = "test"
+Ulinks::Application.config.watsup[:ip] = "123.123.123.124"
