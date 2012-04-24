@@ -1,0 +1,2 @@
+module ForumLinksHelper
+end

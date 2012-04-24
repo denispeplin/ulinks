@@ -1,0 +1,25 @@
+<h1>Listing forum_links</h1>
+
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @forum_links.each do |forum_link| %>
+  <tr>
+    <td><%= forum_link.path %></td>
+    <td><%= forum_link.text %></td>
+    <td><%= link_to 'Show', forum_link %></td>
+    <td><%= link_to 'Edit', edit_forum_link_path(forum_link) %></td>
+    <td><%= link_to 'Destroy', forum_link, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Forum link', new_forum_link_path %>
