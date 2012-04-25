@@ -30,7 +30,11 @@ page = agent.submit(forum_form, forum_form.buttons.first)
 
 page.links.each do |link|
   #puts ec.convert(link.text)
-  puts link.href + ': ' + link.text
+  if link.href =~ /type=view/
+    puts link.href + ': ' + link.text
+    forumticket = ForumLink.forumticket_extract(link.href)
+    ForumLink.create(path: link.href, text: link.text, forumticket: forumticket)
+  end
 end
 
 #examples:
