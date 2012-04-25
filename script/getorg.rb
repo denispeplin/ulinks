@@ -72,7 +72,10 @@ ForumLink.all.each do |fl|
       ws_max = ws
     end
   end
-  puts fl.text + ' ' + ws_max.to_s + ' ' + wl_selected.text if ws_max >= 0.5
+  if ws_max >= 0.5
+    puts fl.text + ' ' + ws_max.to_s + ' ' + wl_selected.text
+    ForumLinkWatsupLink.create(forum_link_id: fl.id, watsup_link_id: wl_selected.id, probability: ws_max)
+  end
 end
 
 #examples:
