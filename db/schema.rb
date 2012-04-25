@@ -11,18 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425104354) do
+ActiveRecord::Schema.define(:version => 20120425115809) do
+
+  create_table "forum_link_watsup_links", :force => true do |t|
+    t.integer  "forum_link_id"
+    t.integer  "watsup_link_id"
+    t.float    "probability"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "forum_link_watsup_links", ["forum_link_id"], :name => "index_forum_link_watsup_links_on_forum_link_id"
+  add_index "forum_link_watsup_links", ["watsup_link_id"], :name => "index_forum_link_watsup_links_on_watsup_link_id"
 
   create_table "forum_links", :force => true do |t|
     t.string   "path"
     t.string   "text"
-    t.integer  "watsup_link_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "forumticket"
   end
-
-  add_index "forum_links", ["watsup_link_id"], :name => "index_forum_links_on_watsup_link_id"
 
   create_table "watsup_links", :force => true do |t|
     t.string   "path"
