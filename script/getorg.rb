@@ -13,6 +13,10 @@ config = Rails.application.config
 
 ec = Encoding::Converter.new("utf-8", "koi8-r")
 
+mechanize_enable = false
+
+if mechanize_enable
+
 agent = Mechanize.new
 
 # FORUM LINK COLLECTION
@@ -55,7 +59,8 @@ page.search('td').each do |tds|
     end
   end
 end
-#pp page
+
+end #if mechanize_enable
 
 #examples:
 #puts white.similarity('Rakovka', 'Rakovka*')
