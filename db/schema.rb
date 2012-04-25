@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420095216) do
+ActiveRecord::Schema.define(:version => 20120425052454) do
 
   create_table "forum_links", :force => true do |t|
     t.string   "path"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120420095216) do
     t.integer  "watsup_link_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "forumticket"
   end
 
   add_index "forum_links", ["watsup_link_id"], :name => "index_forum_links_on_watsup_link_id"
