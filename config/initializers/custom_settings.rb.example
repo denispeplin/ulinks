@@ -4,8 +4,8 @@ config.forum_addr = "123.123.123.123"
 config.forum_user = "test"
 config.forum_password = "test"
 config.watsup_addr = "123.123.123.124"
-config.forum_watsup = "test"
-config.forum_password = "test"
+config.watsup_user = "test"
+config.watsup_password = "test"
 
 config.forum_url = 'http://' + config.forum_addr + '/forum/member.php'
 config.watsup_url = 'http://' + config.watsup_addr + '/TopView.asp?ViewMode=Detail'
