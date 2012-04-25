@@ -62,6 +62,19 @@ end
 
 end #if mechanize_enable
 
+ForumLink.all.each do |fl|
+  ws_max = 0
+  wl_selected = nil
+  WatsupLink.all.each do |wl|
+    ws = white.similarity(fl.text, wl.text)
+    if ws > ws_max
+      wl_selected = wl
+      ws_max = ws
+    end
+  end
+  puts fl.text + ' ' + ws_max.to_s + ' ' + wl_selected.text if ws_max >= 0.5
+end
+
 #examples:
 #puts white.similarity('Rakovka', 'Rakovka*')
 
