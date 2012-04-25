@@ -6,3 +6,4 @@ config.forum_password = "test"
 config.watsup_addr = "123.123.123.124"
 
 config.forum_url = 'http://' + config.forum_addr + '/forum/member.php'
+config.watsup_url = 'http://' + config.watsup_addr + '/TopView.asp?ViewMode=Detail'
